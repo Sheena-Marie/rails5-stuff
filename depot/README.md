@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+UP TO PAGE 142 - COMPLETE FOR HOMEWORK
