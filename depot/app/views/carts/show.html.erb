@@ -8,6 +8,7 @@
   </ul>
 
   <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: 'Are you sure?'} %>
+  <%= button_to 'Checkout', new_order_path, method: :get %>
 
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |

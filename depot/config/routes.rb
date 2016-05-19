@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  resources :payments, only: [:new, :create]
+  resources :charges
+  resources :orders
   resources :line_items
   resources :carts
   get 'store/index'
+  get '/payments/new'
 
   resources :products
   root 'store#index'

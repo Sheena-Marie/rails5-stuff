@@ -25,4 +25,4 @@ Things you may want to cover:
 
 
 
-UP TO PAGE 142 - COMPLETE FOR HOMEWORK
+Added payments via Stripe, it's not quite working yet.
