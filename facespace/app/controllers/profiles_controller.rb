@@ -1,10 +1,11 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = Profile.paginate(:page => params[:page], :per_page => 1)
   end
 
   # GET /profiles/1
@@ -19,9 +20,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    unless @profile.user == current_user
-      redirect_to profile_path(current_user.profile)
-    end
+    authorize! :edit, @profile
   end
 
   # POST /profiles
