@@ -4,14 +4,15 @@
     <ul class="nav navbar-nav pull-xs-right">
 
       <% if user_signed_in? %>
-      <% if current_user.profile %>
-        <li class="nav-item <%= 'active' if current_page?(profile_path(current_user.profile)) %>">
-          <%= link_to 'My Profile', profile_path(current_user.profile), class: 'nav-link' %>
-        </li>
-      <% end %>
-        <li class="nav-item"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Groups', groups_path, class: 'nav-link' %></li>  
+        <% if current_user.profile %>
+          <li class="nav-item <%= 'active' if current_page?(profile_path(current_user.profile)) %>">
+            <%= link_to 'My Profile', profile_path(current_user.profile), class: 'nav-link' %>
+          </li>
+        <% end %>
+          <li class="nav-item"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
 
-      <% end %>
+        <% end %>
 
     </ul>
   </div>
